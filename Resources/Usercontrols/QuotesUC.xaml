@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="TemplateApp.QuotesUC" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Height="500" Width="300">
+    <Grid>
+        <StackPanel>
+            <Label Content="Logo (select file):" />
+            <TextBox Name="LogoPath" Width="300" />
+            <Button Content="Browse..." Click="BrowseLogoFile_Click" />
+            
+            <Label Content="Background Images (select multiple):" />
+            <TextBox Name="BackgroundImagePaths" Width="300" />
+            <Button Content="Browse..." Click="BrowseBackgroundImages_Click" />
+
+            <Label Content="Quotes (input or browse):" />
+            <TextBox Name="QuotesContent" Width="300" Height="100" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+            <Button Content="Browse..." Click="BrowseQuotesFile_Click" />
+
+            <Label Content="Captions (input or browse):" />
+            <TextBox Name="CaptionsContent" Width="300" Height="100" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+            <Button Content="Browse..." Click="BrowseCaptionsFile_Click" />
+
+            <Button Content="Generate Images" Margin="0,10,0,0" Click="GenerateImages_Click" />
+        </StackPanel>
+    </Grid>
+</UserControl>
