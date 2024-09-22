@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using TemplateApp.Resources.Usercontrols;
 
 namespace TemplateApp
 {

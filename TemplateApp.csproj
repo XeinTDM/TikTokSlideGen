@@ -8,4 +8,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Resource Include="Resources\Fonts\Philosopher-Italic.ttf" />
+  </ItemGroup>
+
 </Project>

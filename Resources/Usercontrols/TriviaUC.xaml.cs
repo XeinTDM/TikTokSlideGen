@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Media;
-using TemplateApp.Utilities;
 using System.Windows.Controls;
+using TemplateApp.Resources.Utilities;
 
 namespace TemplateApp
 {
@@ -15,7 +15,7 @@ namespace TemplateApp
         public TriviaUC()
         {
             InitializeComponent();
-            _philosopherItalic = new FontFamily(new Uri("file:///C:/USERS/PRETTYJACKY/APPDATA/LOCAL/MICROSOFT/WINDOWS/FONTS/PHILOSOPHER-ITALIC.TTF"), "Philosopher Italic");
+            _philosopherItalic = new FontFamily(new Uri("pack://application:,,,/"), "./Resources/Fonts/#Philosopher");
         }
 
         private void BrowseLogoFile_Click(object sender, RoutedEventArgs e)
@@ -72,7 +72,9 @@ namespace TemplateApp
                 return;
             }
 
-            CommonUtils.GenerateTriviaImages(LogoPath.Text, backgroundImagePaths, questions.ToArray(), answers.ToArray(), subjectCaption, RenderImage);
+            string logoPath = string.IsNullOrEmpty(LogoPath.Text) ? string.Empty : LogoPath.Text;
+
+            CommonUtils.GenerateTriviaImages(LogoPath.Text, backgroundImagePaths, [.. questions], [.. answers], subjectCaption, RenderImage);
         }
 
         private void RenderImage(string text, string caption, string backgroundImagePath, int index)
